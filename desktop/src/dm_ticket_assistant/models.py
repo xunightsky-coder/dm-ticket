@@ -77,7 +77,7 @@ class TicketTask:
             option.validate()
 
     @classmethod
-    def from_dict(cls, payload: dict) -> "TicketTask":
+    def from_dict(cls, payload: dict) -> TicketTask:
         priorities = [
             PriorityOption(
                 session=str(item.get("session", "")),

@@ -29,5 +29,5 @@ def test_load_task_rejects_non_object_json(tmp_path: Path) -> None:
     source = tmp_path / "invalid.json"
     source.write_text("[]", encoding="utf-8")
 
-    with pytest.raises(ValueError, match="配置文件格式无效"):
+    with pytest.raises(TypeError, match="配置文件格式无效"):
         load_task(source)

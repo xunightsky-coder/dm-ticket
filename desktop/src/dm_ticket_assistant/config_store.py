@@ -34,5 +34,5 @@ def load_task(path: Path | None = None) -> TicketTask | None:
 
     payload = json.loads(source.read_text(encoding="utf-8"))
     if not isinstance(payload, dict):
-        raise ValueError("任务配置文件格式无效。")
+        raise TypeError("任务配置文件格式无效。")
     return TicketTask.from_dict(payload)
